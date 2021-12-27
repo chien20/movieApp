@@ -1,0 +1,92 @@
+.cast-item {
+    .cast-wapper-img {
+        overflow: hidden;
+        border-radius: 6px;
+        img {
+            width: 100%;
+            transform: scale(1);
+            transition: transform 0.3s linear;
+            object-fit: cover;
+            &:hover, &:focus, &:active {
+                transform: scale(1.2);
+                transition: transform 0.3s linear;
+            }
+            border-radius: 6px;
+        }
+    }
+    .cast-info {
+        width: 100%;
+        .cast-name, .cast-movies {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .cast-name {
+            font-size: 24px;
+            font-weight: 500;
+            margin-top: 10px;
+            margin-bottom: 8px;
+            color: #FE9900;
+            -webkit-line-clamp: 1;
+            transition: color linear 0.3s;
+            &:hover, &:focus, &:active {
+                color: #00ffdd;
+                transition: color linear 0.3s;
+            }
+        }
+        .cast-movies {
+            height: 40px;
+            font-size: 16px;
+            font-weight: 400;
+            color: rgb(172, 172, 172);
+            -webkit-line-clamp: 2;
+            span {
+                line-height: 1.28;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1386px){
+    .cast-item {
+        .cast-info {
+            .cast-name {
+                font-size: 20px;
+                margin-top: 8px;
+                margin-bottom: 6px;
+            }
+            .cast-movies {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 1024px){
+    .cast-item {
+        .cast-info {
+            .cast-movies {
+                font-size: 12px;
+            }
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 740px){
+    .cast-item {
+        .cast-info {
+            .cast-name {
+                font-size: 18px;
+            }
+            .cast-movies {
+                height: 28px;
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+    }
+    
+}

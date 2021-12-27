@@ -1,0 +1,1275 @@
+.detail {
+    .content_layout {
+        padding-top: 0;
+    }
+    .detail-page {
+        .backdrop {
+            position: relative;
+            background-color: #000;
+            overflow: hidden;
+            height: 660px;
+            .backdrop_img {
+                width: 100%;
+                height: 100%;
+                margin-left: 200px;
+                object-fit: cover;
+                object-position: 100% 0%; 
+            }
+            .backdrop_overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: linear-gradient(to right, rgba(7.84%, 1.18%, 1.96%, 1.00) 150px, rgba(7.84%, 1.18%, 1.96%, 0.84) 60%);
+                z-index: 2;
+            }
+            .backdrop_content {
+                position: absolute;
+                top: 360px;
+                left: 300px;
+                right: 150px;
+                transform: translateY(-50%);
+                display: flex;
+                align-items: center;
+                z-index: 4;
+                max-height: 100%;
+                .ant-image {
+                    width: 25%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .backdrop_info {
+                    width: 75%;
+                    margin-left: 60px;
+                    .original_title {
+                        font-size: 58px;
+                        font-weight: 600;
+                        margin-bottom: 14px;
+                        letter-spacing: 1px;
+                        >span {
+                            font-size: 46px;
+                            font-weight: 400;
+                            letter-spacing: 0;
+                        }
+                    }
+                    .date_time_start {
+                        font-size: 18px;
+                        margin-bottom: 12px;
+                        .date, .time {
+                            margin-left: 60px;
+                            .countrie {
+                                margin-left: 8px;
+                                position: relative;
+                                &::after {
+                                    position: absolute;
+                                    content: '.';
+                                    right: -6px;
+                                    top: 0px;
+                                }
+                                &:last-child {
+                                    margin-right: 8px;
+                                    &::after {
+                                        content: '';
+                                    }
+                                }
+                            }
+                        }
+                        .anticon {
+                            margin-right: 6px;
+                            color: #FE9900;
+                        }
+                    }
+                    .genres {
+                        font-size: 18px;
+                        margin-bottom: 24px;
+                        span {
+                            padding-right: 36px;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: '.';
+                                right: 16px;
+                                top: -18px;
+                                color: #FE9900;
+                                font-size: 40px;
+                            }
+                            &:last-child::after {
+                                content: '';
+                            }
+                        }
+                    }
+                    .score {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 24px;
+                        .ant-progress {
+                            padding: 5px;
+                            background-color: #181616;
+                            border-radius:  50%;
+                            .ant-progress-text {
+                                font-size: 16px;
+                                color: #fff;
+                                font-weight: 600;
+                            }
+                        }
+                        .user_score, .icon_score {
+                            display: inline-block;
+                            font-size: 18px;
+                            font-weight: 500;
+                            margin-left: 6px;
+                        }
+                        .icon_score {
+                            margin-left: 22px;
+                            padding: 14px;
+                            border-radius: 50%;
+                            background-color: rgb(51, 52, 77)
+                        }
+                        .trailer {
+                            font-size: 26px;
+                            margin-left: 60px;
+                            font-weight: 600;
+                            letter-spacing: 0.5px;
+                            display: flex;
+                            align-items: center;
+                            .anticon {
+                                font-size: 34px;
+                                margin-right: 6px;
+                            }
+                        }
+                    }
+                    .tagline {
+                        font-size: 18px;
+                        font-style: italic;
+                        color: rgb(172, 172, 172);
+                        margin-bottom: 18px;
+                    }
+                    .overview {
+                        margin-bottom: 24px;
+                        h4 {
+                            font-size: 26px;
+                            font-weight: 500;
+                            margin-bottom: 14px;
+                        }
+                        p {
+                            padding-right: 150px;
+                            font-size: 18px;
+                            line-height: 24px;
+                        }
+                    }
+                    .other {
+                        .vote_count, .popularity, .languages {
+                            font-size: 20px;
+                            font-weight: 500;
+                            margin-right: 60px;
+                            span {
+                                font-size: 18px;
+                                font-weight: 400;
+                                font-style: italic;
+                                margin-left: 8px;
+                            }
+                        }
+                        .languages {
+                            span {
+                                position: relative;
+                                &::after {
+                                    position: absolute;
+                                    content: ',';
+                                    right: -4px;
+                                    bottom: 4px;
+                                }
+                                &:last-child {
+                                    margin-right: 8px;
+                                    &::after {
+                                        content: '';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .original_title, .icon_score, .trailer {
+                        cursor: pointer;
+                        transition: color linear 0.3s;
+                        &:hover, &:focus, &:active {
+                            color: #00ffdd;
+                            transition: color linear 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        .detail-left .section_title, .recommen .section_title, .reviews .section_title {
+            font-size: 32px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding-left: 20px;
+            line-height: 36px;
+            border-left: 4px solid #FE9900;
+            width: auto;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .ant-tabs {
+            .ant-tabs-tab {
+                padding: 10px 20px;
+                font-size: 24px;
+                font-weight: 500;
+                color: #fff;
+                &.ant-tabs-tab-active {
+                    .ant-tabs-tab-btn {
+                        color: #FE9900;
+                    }
+                }
+            }
+            .ant-tabs-tabpane {
+                padding: 20px 0;
+            }
+            .scroll-to-more {
+                font-size: 16px;
+                color: rgb(172, 172, 172);
+                margin-bottom: -20px;
+            }
+            &.tabs-videos {
+                .ant-tabs-tabpane {
+                    display: flex;
+                    overflow-x: scroll;
+                    overflow-y: hidden;
+                    >div {
+                        margin-right: 40px;
+                        min-width: 50%;
+                        iframe {
+                            border-radius: 6px;
+                        }
+                    }
+                }
+            }
+            &.tabs-imgs {
+                .ant-tabs-tabpane {
+                    --column-space: 40px;
+                    --row-space: 40px;
+                    --columns: 3;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: calc(-1 * var(--row-space));
+                    >.ant-image {
+                        width: calc((100% / var(--columns)) - var(--column-space)/3*2);
+                        margin-right: var(--column-space);
+                        margin-bottom: var(--row-space);
+                        &:nth-child(3) {
+                            margin-right: 0;
+                        }
+                        &:nth-child(6) {
+                            margin-right: 0;
+                        }
+                        img {
+                            border-radius: 6px;
+                        }
+                    }
+                }
+            }
+            &.tabs-recommen {
+                .layout {
+                    .header, .footer, .coppy_right, .ant-pagination {
+                        display: none;
+                    }
+                    .content_layout {
+                        min-height: auto;
+                    }
+                    .movies-page {
+                        padding: 0;
+                        .list-movies {
+                          --columns: 5;
+                          --column-space: 40px;
+                          --row-space: 0;
+                          flex-wrap: nowrap;
+                          overflow-x: scroll;
+                          padding-bottom: 20px;
+                          margin-left: 0;
+                          margin-right: calc(-1 * var(--column-space));
+                          .movie-item-wapper {
+                              margin-left: 0;
+                              margin-right: var(--column-space);
+                              width: auto;
+                              width: calc((100% / var(--columns)) - var(--column-space));
+                              min-width: calc((100% / var(--columns)) - var(--column-space));
+                           }
+                        }
+                    }
+                }
+            }
+        }
+        .detail-container {
+            padding: 60px 120px 0;
+            display: flex;
+            justify-content: space-between;
+            .detail-left {
+                width: 78%;
+                .left_section {
+                    margin-bottom: 80px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    .list-casts {
+                        --column-space: 40px;
+                        --columns: 5;
+                        overflow-x: scroll;
+                        display: flex;
+                        align-items: center;
+                        padding-top: 20px;
+                        .cast-item {
+                            width: calc((100% / var(--columns)) - var(--column-space));
+                            min-width: calc((100% / var(--columns)) - var(--column-space));
+                            margin-right: var(--column-space);
+                            h3 {
+                                margin-bottom: 18px;
+                                color: #fff;
+                            }
+                            p{
+                                height: auto;
+                            }
+                        } 
+                    }
+                }
+            }
+            .detail-right {
+                width: 18%;
+                .right_section {
+                    margin-bottom: 20px;
+                    .section_title {
+                        font-size: 20px;
+                        font-weight: 500;
+                        margin-bottom: 6px;
+                    }
+                    .section_des {
+                        font-size: 18px;
+                        color: rgb(172, 172, 172);
+                    }
+                    &.social {
+                        color: #fff;
+                        font-size: 34px;
+                        margin-bottom: 40px;
+                        .anticon {
+                            margin-right: 16px;
+                            &:last-child {
+                                margin-right: 0;
+                                padding-left: 16px;
+                                border-left: .5px solid rgb(172, 172, 172);
+                            }
+                            transition: color linear 0.3s;
+                            &:hover, &:focus, &:active {
+                                color: #00ffdd;
+                                transition: color linear 0.3s;
+                            }
+                        }
+                        a {
+                            color: #FE9900;
+                            .anticon {
+                                color: #FE9900;
+                                &:hover, &:focus, &:active {
+                                    color: #00ffdd;
+                                }
+                            }
+                        }
+                    }
+                    &.big {
+                        .section_title {
+                            font-size: 24px;
+                        }
+                        padding-top: 20px;
+                        border-top: .5px solid rgb(100, 100, 100);
+                        &.production_companies .company {
+                            margin-top: 20px;
+                            img {
+                                width: 100%;
+                                max-height: 120px;
+                                object-fit: cover;
+                                background-color: #fff;
+                            }
+                            .section_des {
+                                width: 300px;
+                                margin-top: 8px;
+                                font-size: 17px;
+                                text-align: center;
+                            }
+                        }
+                        &.contributors .contributor {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 20px;
+                            img {
+                                width: 40px;
+                                height: 40px;
+                                border-radius:  50%;
+                            }
+                            div {
+                                margin-left: 10px;
+                                p {
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                    margin-bottom: 2px;
+                                }
+                                span {
+                                    font-size: 17px;
+                                    color: rgb(172, 172, 172);
+                                }
+                            }
+                        }
+                        &.keywords {
+                            .list-key {
+                                margin-top: 20px;
+                                display: flex;
+                                align-items: center;
+                                flex-wrap: wrap;
+                                p {
+                                    padding: 10px 14px;
+                                    background-color: #837f7f;
+                                    border-radius: 6px;
+                                    margin-right: 10px;
+                                    margin-bottom: 10px;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                        &.popular_trend img {
+                            margin-top: 14px;
+                        }
+                        &.content_score {
+                            p {
+                                margin-top: 20px;
+                                margin-bottom: 6px;
+                                padding: 14px 0 14px 14px;
+                                background-color: #837f7f;
+                                border-radius: 6px;
+                                font-size: 20px;
+                                font-weight: 600;
+                                color: #FE9900;
+                            }
+                            span {
+                                display: inline-block;
+                                padding-left: 14px;
+                                font-size: 15px;
+                                color: rgb(172, 172, 172);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .recommen {
+            padding: 80px 120px;
+        }
+        .reviews {
+            padding: 60px 120px 0;
+            .section_title {
+                margin-bottom: 0;
+            }
+            .list-reviews {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .review {
+                    width: 48%;
+                    margin-top: 40px;
+                    display: flex;
+                    img {
+                        width: 80px;
+                        height: 80px;
+                        border-radius:  50%;
+                    }
+                    .review_info {
+                        margin-left: 40px;
+                        .name {
+                            font-size: 24px;
+                            line-height: 32px;
+                            font-weight: 500;
+                        }
+                        .time {
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: rgb(172, 172, 172);
+                        }
+                        .content {
+                            margin-top: 16px;
+                            font-size: 16px;
+                            line-height: 22px;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 4;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            &:hover, &:focus, &:active {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .ant-result-404 {
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 1386px){
+    .detail {
+        .detail-page {
+            .backdrop {
+                height: 600px;
+                .backdrop_img {
+                    margin-left: 100px; 
+                }
+                .backdrop_content {
+                    position: absolute;
+                    top: 340px;
+                    left: 60px;
+                    right: 60px;
+                    transform: translateY(-50%);
+                    .ant-image {
+                        width: 28%;
+                    }
+                    .backdrop_info {
+                        width: 72%;
+                        margin-left: 40px;
+                        .original_title {
+                            font-size: 38px;
+                            font-weight: 600;
+                            margin-bottom: 12px;
+                            >span {
+                                font-size: 32px;
+                            }
+                        }
+                        .date_time_start {
+                            font-size: 16px;
+                            margin-bottom: 10px;
+                            .date, .time {
+                                margin-left: 40px;
+                            }
+                        }
+                        .genres {
+                            font-size: 16px;
+                            margin-bottom: 20px;
+                            span {
+                                padding-right: 30px;
+                                &::after {
+                                    right: 14px;
+                                }
+                            }
+                        }
+                        .score {
+                            margin-bottom: 18px;
+                            .ant-progress {
+                                padding: 0;
+                                width: 50px!important;
+                                height: 50px!important;
+                                .ant-progress-inner {
+                                    width: 50px!important;
+                                    height: 50px!important; 
+                                }
+                                .ant-progress-text {
+                                    font-size: 14px;
+                                }
+                            }
+                            .user_score, .icon_score {
+                                font-size: 16px;
+                                margin-left: 8px;
+                            }
+                            .icon_score {
+                                margin-left: 18px;
+                                padding: 12px;
+                            }
+                            .trailer {
+                                font-size: 22px;
+                                margin-left: 40px;
+                                .anticon {
+                                    font-size: 30px;
+                                }
+                            }
+                        }
+                        .tagline {
+                            font-size: 16px;
+                            margin-bottom: 14px;
+                        }
+                        .overview {
+                            margin-bottom: 20px;
+                            h4 {
+                                font-size: 22px;
+                            }
+                            p {
+                                padding-right: 60px;
+                                font-size: 16px;
+                                line-height: 20px;
+                            }
+                        }
+                        .other {
+                            .vote_count, .popularity, .languages {
+                                font-size: 18px;
+                                margin-right: 40px;
+                                span {
+                                    font-size: 16px;
+                                    margin-left: 6px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+    
+    
+            .detail-left .section_title, .recommen .section_title, .reviews .section_title {
+                font-size: 26px;
+                line-height: 30px;
+            }
+            .ant-tabs {
+                .ant-tabs-tab {
+                    padding: 8px 16px;
+                    font-size: 20px;
+                }
+                .ant-tabs-tabpane {
+                    padding: 16px 0;
+                }
+                .scroll-to-more {
+                    font-size: 12px;
+                    margin-bottom: -16px;
+                }
+                &.tabs-videos {
+                    .ant-tabs-tabpane {
+                        >div {
+                            margin-right: 20px;
+                            min-width: 72%;
+                        }
+                    }
+                }
+                &.tabs-imgs {
+                    .ant-tabs-tabpane {
+                        --column-space: 20px;
+                        --row-space: 20px;
+                        --columns: 2;
+                        >.ant-image {
+                            &:nth-child(2) {
+                                margin-right: 0;
+                            }
+                            &:nth-child(4) {
+                                margin-right: 0;
+                            }
+                            &:nth-child(3) {
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+                &.tabs-recommen {
+                    .layout {
+                        .movies-page {
+                            .list-movies {
+                              --columns: 4;
+                              --column-space: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .detail-container {
+                padding: 40px 60px 0;
+                .detail-left {
+                    width: 79%;
+                    .left_section {
+                        margin-bottom: 60px;
+                        .list-casts {
+                            --column-space: 20px;
+                            --columns: 4;
+                            .cast-item {
+                                h3 {
+                                    margin-bottom: 18px;
+                                }
+                            } 
+                        }
+                    }
+                }
+                .detail-right {
+                    width: 18%;
+                    .right_section {
+                        margin-bottom: 18px;
+                        .section_title {
+                            font-size: 18px;
+                        }
+                        .section_des {
+                            font-size: 16px;
+                        }
+                        &.social {
+                            font-size: 26px;
+                            margin-bottom: 30px;
+                            .anticon {
+                                margin-right: 12px;
+                                &:last-child {
+                                    padding-left: 12px;
+                                }
+                            }
+                        }
+                        &.big {
+                            .section_title {
+                                font-size: 20px;
+                            }
+                            padding-top: 16px;
+                            &.production_companies .company {
+                                margin-top: 16px;
+                                .section_des {
+                                    width: 100%;
+                                    margin-top: 6px;
+                                    font-size: 15px;
+                                }
+                            }
+                            &.contributors .contributor {
+                                margin-top: 16px;
+                                img {
+                                    width: 32px;
+                                    height: 32px;
+                                }
+                                div {
+                                    margin-left: 6px;
+                                    p {
+                                        font-size: 16px;
+                                    }
+                                    span {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                            &.keywords {
+                                .list-key {
+                                    margin-top: 16px;
+                                    p {
+                                        padding: 4px 10px;
+                                        margin-right: 8px;
+                                        margin-bottom: 8px;
+                                    }
+                                }
+                            }
+                            &.popular_trend img {
+                                margin-top: 10px;
+                            }
+                            &.content_score {
+                                p {
+                                    margin-top: 16px;
+                                    padding: 10px 0 10px 10px;
+                                    font-size: 18px;
+                                }
+                                span {
+                                    padding-left: 10px;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .recommen {
+                padding: 60px 60px;
+            }
+            .reviews {
+                padding: 60px 60px 0;
+                .list-reviews {
+                    .review {
+                        width: 100%;
+                        margin-top: 40px;
+                        .review_info {
+                            .name {
+                                font-size: 20px;
+                                line-height: 26px;
+                            }
+                            .time {
+                                font-size: 14px;
+                                line-height: 20px;
+                            }
+                            .content {
+                                margin-top: 12px;
+                                font-size: 16px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 1386px){
+    .detail {
+        .detail-page {
+            .backdrop {
+                height: 500px;
+                .backdrop_img {
+                    margin-left: 60px; 
+                }
+                .backdrop_content {
+                    position: absolute;
+                    top: 280px;
+                    left: 20px;
+                    right: 20px;
+                    .ant-image {
+                        width: 28%;
+                    }
+                    .backdrop_info {
+                        width: 68%;
+                        margin-left: 20px;
+                        .original_title {
+                            font-size: 36px;
+                            margin-bottom: 10px;
+                            >span {
+                                font-size: 28px;
+                            }
+                        }
+                        .date_time_start {
+                            font-size: 15px;
+                            margin-bottom: 8px;
+                            .date, .time {
+                                margin-left: 30px;
+                            }
+                        }
+                        .genres {
+                            font-size: 15px;
+                            margin-bottom: 12px;
+                            span {
+                                padding-right: 20px;
+                                &::after {
+                                    right: 8px;
+                                }
+                            }
+                        }
+                        .score {
+                            margin-bottom: 12px;
+                            .user_score, .icon_score {
+                                font-size: 15px;
+                                margin-left: 6px;
+                            }
+                            .icon_score {
+                                margin-left: 14px;
+                                padding: 10px;
+                            }
+                            .trailer {
+                                font-size: 20px;
+                                margin-left: 30px;
+                                .anticon {
+                                    font-size: 26px;
+                                }
+                            }
+                        }
+                        .tagline {
+                            font-size: 15px;
+                            margin-bottom: 12px;
+                        }
+                        .overview {
+                            margin-bottom: 16px;
+                            h4 {
+                                font-size: 18px;
+                            }
+                            p {
+                                padding-right: 0;
+                                font-size: 15px;
+                                line-height: 18px;
+                            }
+                        }
+                        .other {
+                            .vote_count, .popularity, .languages {
+                                font-size: 16px;
+                                margin-right: 12px;
+                                span {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+    
+    
+            .detail-left .section_title, .recommen .section_title, .reviews .section_title {
+                font-size: 22px;
+                line-height: 26px;
+            }
+            .ant-tabs {
+                .ant-tabs-tab {
+                    padding: 4px 10px;
+                    font-size: 18px;
+                }
+                .ant-tabs-tabpane {
+                    padding: 12px 0;
+                }
+                .scroll-to-more {
+                    margin-bottom: -12px;
+                }
+                &.tabs-videos {
+                    .ant-tabs-tabpane {
+                        >div {
+                            margin-right: 20px;
+                            min-width: 86%;
+                        }
+                    }
+                }
+            }
+            .detail-container {
+                padding: 40px 20px 0;
+                .detail-left {
+                    width: 79%;
+                    .left_section {
+                        margin-bottom: 40px;
+                    }
+                }
+                .detail-right {
+                    width: 18%;
+                    .right_section {
+                        margin-bottom: 14px;
+                        .section_title {
+                            font-size: 16px;
+                        }
+                        .section_des {
+                            font-size: 15px;
+                        }
+                        &.social {
+                            font-size: 22px;
+                            margin-bottom: 24px;
+                            .anticon {
+                                margin-right: 6px;
+                                &:last-child {
+                                    padding-left: 6px;
+                                }
+                            }
+                        }
+                        &.big {
+                            .section_title {
+                                font-size: 16px;
+                            }
+                            padding-top: 12px;
+                            &.production_companies .company {
+                                margin-top: 12px;
+                                .section_des {
+                                    margin-top: 6px;
+                                    font-size: 14px;
+                                }
+                            }
+                            &.contributors .contributor {
+                                margin-top: 12px;
+                                div {
+                                    margin-left: 4px;
+                                    p {
+                                        font-size: 15px;
+                                    }
+                                    span {
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                            &.keywords {
+                                .list-key {
+                                    margin-top: 12px;
+                                    p {
+                                        padding: 4px 6px;
+                                        margin-right: 6px;
+                                        margin-bottom: 6px;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                            &.popular_trend img {
+                                margin-top: 10px;
+                            }
+                            &.content_score {
+                                p {
+                                    margin-top: 12px;
+                                    padding: 6px 0 6px 6px;
+                                    font-size: 16px;
+                                }
+                                span {
+                                    padding-left: 6px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .recommen {
+                padding: 40px 40px;
+            }
+            .reviews {
+                padding: 40px 40px 0;
+                .list-reviews {
+                    .review {
+                        width: 100%;
+                        margin-top: 20px;
+                        .review_info {
+                            .name {
+                                font-size: 18px;
+                                line-height: 22px;
+                            }
+                            .time {
+                                font-size: 14px;
+                                line-height: 18px;
+                            }
+                            .content {
+                                margin-top: 10px;
+                                font-size: 15px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 760px){
+    .detail {
+        .detail-page {
+            .backdrop {
+                background-color: #181616;
+                height: 558px;
+                .backdrop_img {
+                    height: 158px;
+                    margin-left: 0; 
+                }
+                .backdrop_overlay {
+                    background-image: linear-gradient(to bottom, rgba(7.84%, 1.18%, 1.96%, 0.5) 20px, rgba(7.84%, 1.18%, 1.96%, 0.1) 100%);
+                }
+                .backdrop_content {
+                    position: absolute;
+                    background-color: #181616;
+                    bottom: -80px;
+                    left: 0;
+                    right: 0;
+                    z-index: 10;
+                    flex-direction: column;
+                    .ant-image {
+                        width: auto;
+                        img {
+                        width: 160px;
+                        height: 160px;
+                        border-radius:  50%;
+                        object-fit: cover;
+                        object-position: 100% 0%; 
+                        }
+                    }
+                    .backdrop_info {
+                        width: 100%;
+                        margin-left: 20px;
+                        .original_title {
+                            font-size: 36px;
+                            margin-bottom: 10px;
+                            >span {
+                                font-size: 28px;
+                            }
+                        }
+                        .date_time_start {
+                            font-size: 15px;
+                            margin-bottom: 8px;
+                            .date, .time {
+                                margin-left: 30px;
+                            }
+                        }
+                        .genres {
+                            font-size: 15px;
+                            margin-bottom: 12px;
+                            span {
+                                padding-right: 20px;
+                                &::after {
+                                    right: 8px;
+                                }
+                            }
+                        }
+                        .score {
+                            margin-bottom: 12px;
+                            .user_score, .icon_score {
+                                font-size: 15px;
+                                margin-left: 6px;
+                            }
+                            .icon_score {
+                                margin-left: 14px;
+                                padding: 10px;
+                            }
+                            .trailer {
+                                font-size: 20px;
+                                margin-left: 30px;
+                                .anticon {
+                                    font-size: 26px;
+                                }
+                            }
+                        }
+                        .tagline {
+                            font-size: 15px;
+                            margin-bottom: 12px;
+                        }
+                        .overview {
+                            margin-bottom: 16px;
+                            h4 {
+                                font-size: 18px;
+                            }
+                            p {
+                                padding-right: 0;
+                                font-size: 15px;
+                                line-height: 18px;
+                            }
+                        }
+                        .other {
+                            .vote_count, .popularity, .languages {
+                                font-size: 16px;
+                                margin-right: 12px;
+                                span {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+    
+    
+            .detail-left .section_title, .recommen .section_title, .reviews .section_title {
+                font-size: 22px;
+                line-height: 26px;
+            }
+            .ant-tabs {
+                .ant-tabs-tab {
+                    padding: 4px 10px;
+                    font-size: 18px;
+                }
+                .ant-tabs-tabpane {
+                    padding: 12px 0;
+                }
+                .scroll-to-more {
+                    margin-bottom: -12px;
+                }
+                &.tabs-videos {
+                    .ant-tabs-tabpane {
+                        >div {
+                            margin-right: 20px;
+                            min-width: 86%;
+                        }
+                    }
+                }
+            }
+            .detail-container {
+                margin-top: 400px;
+                padding: 40px 20px 0;
+                .detail-left {
+                    width: 79%;
+                    .left_section {
+                        margin-bottom: 40px;
+                    }
+                }
+                .detail-right {
+                    width: 18%;
+                    .right_section {
+                        margin-bottom: 14px;
+                        .section_title {
+                            font-size: 16px;
+                        }
+                        .section_des {
+                            font-size: 15px;
+                        }
+                        &.social {
+                            font-size: 22px;
+                            margin-bottom: 24px;
+                            .anticon {
+                                margin-right: 6px;
+                                &:last-child {
+                                    padding-left: 6px;
+                                }
+                            }
+                        }
+                        &.big {
+                            .section_title {
+                                font-size: 16px;
+                            }
+                            padding-top: 12px;
+                            &.production_companies .company {
+                                margin-top: 12px;
+                                .section_des {
+                                    margin-top: 6px;
+                                    font-size: 14px;
+                                }
+                            }
+                            &.contributors .contributor {
+                                margin-top: 12px;
+                                div {
+                                    margin-left: 4px;
+                                    p {
+                                        font-size: 15px;
+                                    }
+                                    span {
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                            &.keywords {
+                                .list-key {
+                                    margin-top: 12px;
+                                    p {
+                                        padding: 4px 6px;
+                                        margin-right: 6px;
+                                        margin-bottom: 6px;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                            &.popular_trend img {
+                                margin-top: 10px;
+                            }
+                            &.content_score {
+                                p {
+                                    margin-top: 12px;
+                                    padding: 6px 0 6px 6px;
+                                    font-size: 16px;
+                                }
+                                span {
+                                    padding-left: 6px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .recommen {
+                padding: 40px 40px;
+            }
+            .reviews {
+                padding: 40px 40px 0;
+                .list-reviews {
+                    .review {
+                        width: 100%;
+                        margin-top: 20px;
+                        .review_info {
+                            .name {
+                                font-size: 18px;
+                                line-height: 22px;
+                            }
+                            .time {
+                                font-size: 14px;
+                                line-height: 18px;
+                            }
+                            .content {
+                                margin-top: 10px;
+                                font-size: 15px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

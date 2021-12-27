@@ -1,0 +1,73 @@
+.search {
+    .ant-input-search {
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: center;
+        .ant-input-group {
+            width: 50%;
+            .ant-input {
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+                padding: 15px 20px;
+                box-shadow: none;
+                background-color: #221f1f;
+                border: 2px solid #fff;
+                color: #fff;
+                border-right: none;
+                &:hover, &:focus, &:active {
+                    border: 2px solid #00ffdd;
+                    border-right: none;
+                    ~.ant-input-group-addon {
+                        border: 2px solid #00ffdd;
+                        border-left: none; 
+                    }
+                }
+            }
+            .ant-input-group-addon {
+                background-color: #221f1f;
+                border: 2px solid #fff;
+                border-left: none;
+                left: 0;
+                font-size: 16px;
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+                padding-right: 6px;
+                .ant-input-search-button {
+                    height: 43px;
+                    border-radius: 6px;
+                    background-color: #FE9900;
+                    border: none;
+                    span {
+                        color: #221f1f;
+                        font-size: 18px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1386px){
+    .search {
+        .ant-input-search {
+            margin-bottom: 40px;
+            .ant-input-group {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 760px){
+    .search {
+        .ant-input-search {
+            margin-bottom: 30px;
+            .ant-input-group {
+                width: 100%;
+            }
+        }
+    }
+}

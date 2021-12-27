@@ -1,0 +1,809 @@
+.home {
+    .content_layout {
+        padding-top: 0;
+    }
+
+    .slider {
+        .slick-arrow {
+            width: 80px;
+            height: 80px;
+            z-index: 10;
+            background: none;
+            color: #fff;
+            &:before {
+                color: #fff;
+                font-size: 60px;
+                font-weight: 600;
+            }
+            &.slick-prev {
+                &:before {
+                    content: '◁'
+                }
+                left: 0;
+            }
+            &.slick-next {
+                &:before {
+                    content: '▷'
+                }
+                right: 0;
+            }
+        }
+      .slide-main {
+        .slide-item {
+            position: relative;
+            .slide-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.3);
+                z-index: 2;
+            }
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+            .movie-info {
+                position: absolute;
+                left: 100px;
+                z-index: 3;
+                top: 50%;
+                
+                &.name {
+                    font-size: 80px;
+                    font-weight: 700;
+                    transform: translateY(-148px);
+                }
+                &.detail {
+                    font-size: 16px;
+                    font-weight: 500;
+                    transform: translateY(-36px);
+                    span {
+                        margin-right: 5px;
+                        &.detail-text {
+                            margin-right: 12px;  
+                        }
+                        &.anticon {
+                            color: #FE9900;
+                            &.anticon-field-number {
+                                color: #00ffdd;
+                            }
+                        }
+                    }
+                }
+                &.des {
+                    transform: translateY(10px);
+                    width: 36%;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+                &.read-more {
+                    transform: translateY(136px);
+                    padding: 14px 24px;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 8px;
+                    background: #FE9900;
+                    color: #fff;
+                    font-size: 19px;
+                    text-transform: uppercase;
+                    border: none;
+                    transition: background 0.8s, width 0.8s cubic-bezier(0.6, 0, 0, 1) 0s;
+                    &:hover, &:focus, &:active {
+                        background: #00ffdd;
+                        transition: background 0.8s, width 0.8s cubic-bezier(0.6, 0, 0, 1) 0s;
+                    }
+                    .anticon {
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+    .slide-list {
+        .slick-arrow {
+            width: 100px;
+            height: 100%;
+            z-index: 10;
+            &:before {
+                position: absolute;
+                color: #fff;
+                font-size: 60px;
+                line-height: 60px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .movie-item {
+            border-radius: 0;
+            width: 100%;
+            img {
+                border-radius: 0;
+            }
+            
+        }
+    }
+  } 
+  .movies-section {
+      margin-top: 80px;
+      &:last-child {
+          margin-bottom: 80px;
+      }
+      .title-section {
+          margin-left: 120px;
+          font-size: 32px;
+          font-weight: 600;
+          text-transform: uppercase;
+          padding-left: 20px;
+          line-height: 36px;
+          border-left: 4px solid #FE9900;
+          width: auto;
+          letter-spacing: 1px;
+          a {
+            color: #FE9900;
+            &:hover, &:focus, &:active {
+                color: #00ffdd;
+            }
+          }
+          &.mid {
+            font-size: 38px;
+            text-align: center;
+            border: none;
+            margin-left: 0;
+            padding: 0;
+            margin-bottom: 60px;
+          }
+      }
+      &.home-banner {
+          padding: 0 120px;
+          img {
+            border-radius: 6px;
+            }
+          &.mid {
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            p {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 80px;
+                font-weight: 500;
+            }
+            img {
+                width: 50%;
+                &.banner-left {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+                &.banner-right {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+          }
+      }
+      .list-movies-home {
+          .layout {
+              .header, .footer, .coppy_right, .ant-pagination {
+                  display: none;
+              }
+              .content_layout {
+                  min-height: auto;
+              }
+              .movies-page {
+                  padding-top: 40px;
+                  padding-bottom: 0;
+                  .list-movies, .casts-list {
+                    --columns: 5;
+                    --row-space: 0;
+                    flex-wrap: nowrap;
+                    overflow-x: scroll;
+                    padding-bottom: 20px;
+                    margin-left: 0;
+                    margin-right: calc(-1 * var(--column-space));
+                    .movie-item-wapper, .cast-item {
+                        margin-left: 0;
+                        margin-right: var(--column-space);
+                        width: auto;
+                        min-width: calc((100% / var(--columns)) - var(--column-space));
+                    }
+                  }
+              }
+          }
+      }
+      .pricing-list {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 120px;
+          .pricing-item {
+              width: 31%;
+              padding: 40px 40px;
+              background-color: #221f1f;
+              border-radius: 6px;
+              transform: translateY(0);
+              transition: transform linear 0.2s;
+              &:nth-child(2) {
+                border-top: 6px solid #00ffdd;
+                padding: 80px 40px;
+              }
+              &:hover, &:focus, &:active {
+                  transform: translateY(-12px);
+                  transition: transform linear 0.2s;
+              }
+              .pricing {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  p {
+                      font-size: 26px;
+                      &.bold {
+                          font-weight: 600;
+                          span {
+                            font-size: 16px;
+                          }
+                      }
+                  }
+              }
+              .list {
+                  padding: 40px 0;
+                  li {
+                      padding: 10px;
+                      font-size: 20px;
+                      text-align: center;
+                      &.del {
+                          text-decoration: line-through;
+                      }
+                  }
+              }
+            }
+            .pricing-button {
+                display: flex;
+                justify-content: center;
+                button {
+                    padding: 10px 26px;
+                    background-color: #221f1f;
+                    border: 2px solid #FE9900;
+                    color: #FE9900;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    border-radius: 6px;
+                    &:hover, &:focus, &:active {
+                      border: 2px solid #00ffdd;
+                      color: #00ffdd;   
+                    }
+                }
+            }
+      }
+      .contact {
+          .map {
+              width: 46%;
+              iframe {
+                width: 100%;
+                height: 377.5px;
+                border-radius: 6px;
+              }
+          }
+          .form {
+              width: 46%;
+              p {
+                  font-size: 22px;
+                  margin-bottom: 14px;
+                  .anticon {
+                      margin-right: 6px;
+                  }
+              }
+              input, textarea {
+                  width: 100%;
+                  display: block;
+                  box-shadow: none;
+                  background-color: #221f1f;
+                  border: 2px solid #fff;
+                  color: #fff;
+                  padding: 10px 15px;
+                  border-radius: 6px;
+                  margin-bottom: 26px;
+                  outline: none;
+                  font-size: 16px;
+                  &.contact-text {
+                    height: 160px;
+                  }
+                  &:hover, &:focus, &:active {
+                    border: 2px solid #FE9900;
+                    background-color: #221f1f;
+                }
+              }
+          }
+     }
+    .teams {
+        --column-space: 80px;
+        --columns: 4;
+        display: flex;
+        align-items: center;
+        padding: 0 120px;
+        margin-right: calc(-1 * var(--column-space));
+        .team {
+            width: calc((100% / var(--columns)) - var(--column-space));
+            margin-right: var(--column-space);
+            .team-wapper {
+                width: 100%;
+                overflow: hidden;
+                border-radius: 40%;
+                img {
+                    transform: scale(1);
+                    transition: transform 0.3s linear;
+                    object-fit: cover;
+                    &:hover, &:focus, &:active {
+                        transform: scale(1.1);
+                        transition: transform 0.3s linear;
+                    }
+                }
+            }
+            h4 {
+                font-size: 32px;
+                margin-bottom: 16px;
+                margin-top: 26px;
+                font-weight: 600;
+                text-align: center;
+                cursor: pointer;
+                transition: color linear 0.3s;
+                &:hover, &:focus, &:active {
+                    color: #00ffdd;
+                    transition: color linear 0.3s;
+                }
+            }
+            p {
+                text-align: center;
+                font-size: 18px;
+                color: rgb(150, 150, 150)
+            }
+        }
+    }
+  } 
+  .ant-back-top {
+      right: 50px;
+      .back-top {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          font-size: 40px;
+          text-align: center;
+          color: #1b9282;
+          opacity: 0.4;
+          &:hover, &:focus, &:active {
+              opacity: 0.6;
+              color: #00ffdd;
+          }
+      }
+  }
+}
+
+
+@media only screen and (max-width: 1386px){
+    .home {
+        .slider {
+            .slick-arrow {
+                width: 60px;
+                height: 60px;
+                &:before {
+                    font-size: 40px;
+                    font-weight: 500;
+                }
+            }
+          .slide-main {
+            .slide-item {
+                .movie-info {
+                    left: 80px;
+                    &.name {
+                        font-size: 60px;
+                        font-weight: 600;
+                        transform: translateY(-128px);
+                    }
+                    &.detail {
+                        transform: translateY(-46px);
+                    }
+                    &.des {
+                        transform: translateY(-10px);
+                        width: 46%;
+                    }
+                    &.read-more {
+                        transform: translateY(116px);
+                        padding: 10px 16px;
+                        font-size: 18px;
+                        .anticon {
+                            margin-right: 6px;
+                        }
+                    }
+                }
+            }
+        }
+        .slide-list {
+            .slick-arrow {
+                &:before {
+                    font-size: 40px;
+                    line-height: 40px;
+                }
+            }
+        }
+      } 
+      .movies-section {
+          margin-top: 60px;
+          &:last-child {
+              margin-bottom: 60px;
+          }
+          .title-section {
+              margin-left: 60px;
+              font-size: 28px;
+              &.mid {
+                font-size: 34px;
+                margin-bottom: 40px;
+              }
+          }
+          &.home-banner {
+              padding: 0 60px;
+              &.mid {
+                p {
+                    font-size: 60px;
+                }
+              }
+          }
+          .list-movies-home {
+              .layout {
+                  .movies-page {
+                      .list-movies, .casts-list {
+                        --columns: 4;
+                      }
+                  }
+              }
+          }
+          .pricing-list {
+              padding: 0 60px;
+              .pricing-item {
+                  padding: 20px 20px;
+                  &:nth-child(2) {
+                    padding: 50px 20px;
+                  }
+                  .pricing {
+                      p {
+                          font-size: 20px;
+                          &.bold {
+                              font-weight: 500;
+                              span {
+                                font-size: 14px;
+                              }
+                          }
+                      }
+                  }
+                  .list {
+                      padding: 20px 0;
+                      li {
+                          padding: 8px;
+                          font-size: 16px;
+                      }
+                  }
+                }
+                .pricing-button {
+                    button {
+                        padding: 8px 16px;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                }
+          }
+          .contact {
+              .map {
+                  width: 52%;
+                  iframe {
+                    width: 100%;
+                    height: 304px;
+                    border-radius: 6px;
+                  }
+              }
+              .form {
+                  width: 44%;
+                  p {
+                      font-size: 20px;
+                      margin-bottom: 12px;
+                  }
+                  input, textarea {
+                      padding: 8px 11px;
+                      margin-bottom: 20px;
+                      &.contact-text {
+                        height: 120px;
+                      }
+                  }
+              }
+         }
+        .teams {
+            --column-space: 40px;
+            --columns: 4;
+            padding: 0 60px;
+            .team {
+                h4 {
+                    font-size: 24px;
+                    margin-bottom: 12px;
+                    margin-top: 18px;
+                    font-weight: 500;
+                }
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+      } 
+      .ant-back-top {
+          right: 20px;
+          bottom: 40px;
+      }
+    }
+}
+
+
+@media only screen and (max-width: 1024px){
+    .home {
+        .slider {
+            .slick-arrow {
+                width: 40px;
+                height: 40px;
+                &:before {
+                    font-size: 30px;
+                    font-weight: 500;
+                }
+            }
+          .slide-main {
+            .slide-item {
+                .movie-info {
+                    left: 60px;
+                    &.name {
+                        font-size: 38px;
+                        transform: translateY(-80px);
+                    }
+                    &.detail {
+                        transform: translateY(-30px);
+                    }
+                    &.des {
+                        transform: translateY(-4px);
+                        width: 66%;
+                        -webkit-line-clamp: 2;
+                    }
+                    &.read-more {
+                        transform: translateY(66px);
+                        padding: 8px 14px;
+                        font-size: 16px;
+                        .anticon {
+                            margin-right: 4px;
+                        }
+                    }
+                }
+            }
+        }
+        .slide-list {
+            .slick-arrow {
+                &:before {
+                    font-size: 32px;
+                    line-height: 32px;
+                }
+            }
+        }
+      } 
+      .movies-section {
+          margin-top: 60px;
+          &:last-child {
+              margin-bottom: 60px;
+          }
+          .title-section {
+              margin-left: 20px;
+              &.mid {
+                font-size: 30px;
+              }
+          }
+          &.home-banner {
+              padding: 0 20px;
+          }
+          .pricing-list {
+              padding: 0 20px;
+              .pricing-item {
+                  &:nth-child(2) {
+                    padding: 40px 20px;
+                  }
+                  .pricing {
+                      p {
+                          font-size: 16px;
+                          &.bold {
+                              font-weight: 500;
+                              span {
+                                font-size: 12px;
+                              }
+                          }
+                      }
+                  }
+                  .list {
+                      padding: 16px 0;
+                      li {
+                          padding: 8px 0;
+                          font-size: 15px;
+                      }
+                  }
+                }
+                .pricing-button {
+                    button {
+                        padding: 6px 12px;
+                    }
+                }
+          }
+          .contact {
+              .map {
+                  width: 52%;
+                  iframe {
+                    height: 260.5px;
+                  }
+              }
+              .form {
+                  width: 46%;
+                  p {
+                      font-size: 18px;
+                      margin-bottom: 10px;
+                  }
+                  input, textarea {
+                      padding: 6px 10px;
+                      margin-bottom: 16px;
+                      &.contact-text {
+                        height: 100px;
+                      }
+                  }
+              }
+         }
+        .teams {
+            --column-space: 20px;
+            padding: 0 20px;
+            .team {
+                h4 {
+                    font-size: 18px;
+                    margin-bottom: 8px;
+                    margin-top: 12px;
+                }
+                p {
+                    font-size: 15px;
+                }
+            }
+        }
+      } 
+    }
+}
+
+
+@media only screen and (max-width: 760px){
+    .home {
+        .slider {
+            .slick-arrow {
+                display: none;
+                &:before {
+                    display: none;
+                }
+            }
+          .slide-main {
+            .slide-item {
+                .movie-info {
+                    &.name {
+                        display: none;
+                    }
+                    &.detail {
+                        display: none;
+                    }
+                    &.des {
+                        display: none;
+                    }
+                    &.read-more {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .slide-list {
+            .slick-arrow {
+                width: 40px;
+                &:before {
+                    font-size: 26px;
+                    line-height: 30px;
+                }
+            }
+        }
+      } 
+      .movies-section {
+          margin-top: 40px;
+          &:last-child {
+              margin-bottom: 40px;
+          }
+          .title-section {
+              margin-left: 20px;
+              padding-left: 12px;
+              font-size: 22px;
+              line-height: 26px;
+              &.mid {
+                font-size: 24px;
+              }
+          }
+          &.home-banner {
+              &.mid {
+                  p {
+                      font-size: 30px;
+                  }
+              }
+          }
+          .list-movies-home {
+            .layout {
+                .movies-page {
+                    .list-movies, .casts-list {
+                      --columns: 2;
+                    }
+                }
+            }
+        }
+          .pricing-list {
+              padding: 0 20px;
+              flex-direction: column;
+              justify-content: center;
+              .pricing-item {
+                  width: 80%;
+                  &:nth-child(2) {
+                    width: 100%;
+                    padding: 40px 20px;
+                    margin: 30px 0;
+                  }
+                }
+          }
+          .contact {
+              .map {
+                  width: 100%;
+                  margin-bottom: 30px;
+                  iframe {
+                    height: 260.5px;
+                  }
+              }
+              .form {
+                  width: 100%;
+                  p {
+                      font-size: 18px;
+                      margin-bottom: 10px;
+                  }
+                  input, textarea {
+                      padding: 6px 10px;
+                      margin-bottom: 16px;
+                      &.contact-text {
+                        height: 100px;
+                      }
+                  }
+              }
+         }
+        .teams {
+            --columns: 2;
+            --column-space: 20px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            .team {
+                &:nth-child(1) {
+                    margin-bottom: 20px;
+                }
+                &:nth-child(2) {
+                    margin-bottom: 20px;
+                }
+                h4 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+      } 
+    }
+}

@@ -1,0 +1,75 @@
+.upcoming {
+    .picker {
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        margin-bottom: 60px;
+        .ant-picker {
+            width: 50%;
+            padding: 15px 20px;
+            border-radius: 6px;
+            background-color: #221f1f;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 16px;
+            transition: none;
+            &.ant-picker-focused {
+                border: 2px solid #00ffdd !important;
+            }
+            &:hover, &:focus, &:active {
+                border: 2px solid #00ffdd !important;
+            }
+            .ant-picker-input > input {
+                color: #fff;
+                font-size: 16px;
+            }
+            .ant-picker-separator {
+                color: #FE9900;
+            }
+            .ant-picker-suffix {
+                color: #FE9900;
+                font-size: 24px;
+            }
+            .ant-picker-active-bar {
+                bottom: 4px;
+                height: 1px;
+                margin-left: 20px;
+                background: #FE9900;
+                width: 120px!important;
+            }
+            .ant-picker-clear {
+                right: 20px;
+                width: 24px;
+                height: 24px;
+                background-color: #221f1f;
+                span {
+                    color: #FE9900;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1386px){
+    .upcoming {
+        .picker {
+            margin-bottom: 40px;
+            .ant-picker {
+                width: 60%;
+            }
+        }
+    }    
+}
+
+@media only screen and (max-width: 760px){
+    .upcoming {
+        .picker {
+            margin-bottom: 30px;
+            .ant-picker {
+                width: 100%;
+            }
+        }
+    }    
+}
